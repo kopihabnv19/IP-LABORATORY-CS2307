@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Shopping System</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Internal CSS -->
+    <style>
+        h2 { color: darkblue; text-align: center; }
+        #offer { background-color: lightyellow; padding: 10px; border: 1px solid orange; }
+        .product {
+            border: 2px solid black;
+            padding: 15px;
+            margin: 15px;
+            width: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Online Shopping System</h1></header>
+    <nav>
+        <a href="#products">Products</a>
+        <a href="#order">Order</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <p id="offer">Special Offer: Get 10% discount on selected products.</p>
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="product">
+            <img src="laptop.jpg" width="180" height="120" alt="Laptop">
+            <h3>Laptop</h3>
+            <p>Price: ₹45,000</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="product">
+            <img src="phone.jpg" width="180" height="120" alt="Smart Phone">
+            <h3>Smart Phone</h3>
+            <p>Price: ₹20,000</p>
+            <button>Buy Now</button>
+        </div>
+    </section>
+    <hr>
+    <section id="order">
+        <h2>Purchase Form</h2>
+        <form>
+            Name: <input type="text" name="name"><br><br>
+            Email: <input type="email" name="email"><br><br>
+            Product:
+            <select name="product"><option>Laptop</option><option>Smart Phone</option></select><br><br>
+            Quantity: <input type="number" name="quantity" min="1" max="10"><br><br>
+            <input type="submit" value="Place Order">
+        </form>
+    </section>
+    <hr>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <!-- Inline CSS -->
+        <p style="color: green; font-weight: bold;">Email: shop@gmail.com</p>
+    </section>
+    <footer><p>© 2026 Online Shopping System</p></footer>
+</body>
+</html>

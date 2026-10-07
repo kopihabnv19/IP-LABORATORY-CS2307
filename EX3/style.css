@@ -1,0 +1,42 @@
+/* Element selectors */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 20px;
+}
+header {
+    background-color: navy;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+/* Descendant selector */
+nav a {
+    text-decoration: none;
+    margin: 15px;
+    color: blue;
+}
+/* Class selector */
+.product { background-color: white; }
+/* ID selector */
+#order {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid gray;
+}
+/* Group selector */
+h1, h2, h3 { font-family: Arial, sans-serif; }
+/* Attribute selectors */
+input[type="text"], input[type="email"] {
+    padding: 6px;
+    width: 200px;
+}
+/* Pseudo-class selector */
+button:hover { background-color: green; color: white; }
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
