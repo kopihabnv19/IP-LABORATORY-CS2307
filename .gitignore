@@ -1,0 +1,6 @@
+*.class
+*.war
+WEB-INF/lib/*.jar
+WEB-INF/classes/
+build/
+work/
