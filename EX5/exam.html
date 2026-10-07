@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Examination System</title>
+</head>
+<body>
+    <h1>Online Examination System</h1>
+    <form action="ExamServlet" method="post">
+        Name: <input type="text" name="username" required><br><br>
+        <h3>1. What is the capital of France?</h3>
+        <input type="radio" name="q1" value="Paris" required> Paris<br>
+        <input type="radio" name="q1" value="London"> London<br>
+        <input type="radio" name="q1" value="Berlin"> Berlin<br><br>
+        <h3>2. What is 2 + 2?</h3>
+        <input type="radio" name="q2" value="3" required> 3<br>
+        <input type="radio" name="q2" value="4"> 4<br>
+        <input type="radio" name="q2" value="5"> 5<br><br>
+        <h3>3. Which language is used for styling web pages?</h3>
+        <input type="text" name="q3" required><br><br>
+        <input type="submit" value="Submit Exam">
+        <input type="reset" value="Clear">
+    </form>
+</body>
+</html>
