@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Booking System</title>
+</head>
+<body>
+    <h1>Ticket Booking System</h1>
+    <form action="TicketServlet" method="post">
+        Name: <input type="text" name="username" maxlength="50" required><br><br>
+        Event Name:
+        <select name="event">
+            <option>Movie</option><option>Concert</option><option>Bus</option><option>Train</option>
+        </select><br><br>
+        Number of Tickets: <input type="number" name="tickets" min="1" required><br><br>
+        Booking Date: <input type="date" name="date" required><br><br>
+        <input type="submit" value="Book Ticket">
+    </form>
+</body>
+</html>
