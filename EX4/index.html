@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Portal Registration</title>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var phone = document.getElementById("phone").value.trim();
+            var password = document.getElementById("password").value;
+            var resume = document.getElementById("resume").value;
+
+            // Name: only alphabets and spaces.
+            var namePattern = /^[A-Za-z ]+$/;
+            if (!name.match(namePattern)) {
+                alert("Enter a valid name");
+                return false;
+            }
+            // Email format.
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+            if (!email.match(emailPattern)) {
+                alert("Enter a valid email");
+                return false;
+            }
+            // Phone: exactly ten digits.
+            var phonePattern = /^[0-9]{10}$/;
+            if (!phone.match(phonePattern)) {
+                alert("Phone number must contain 10 digits");
+                return false;
+            }
+            if (password.length < 6) {
+                alert("Password must contain at least 6 characters");
+                return false;
+            }
+            // Resume: PDF, DOC or DOCX extension.
+            var resumePattern = /\.(pdf|doc|docx)$/i;
+            if (!resume.match(resumePattern)) {
+                alert("Only PDF, DOC or DOCX files are allowed");
+                return false;
+            }
+            alert("Registration Successful");
+            // This lab demonstrates validation; no server stores the form.
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>Job Portal Registration</h1>
+    <h3>Job Seeker Registration Form</h3>
+    <form onsubmit="return validateForm()">
+        Full Name:
+        <input type="text" id="name" required><br><br>
+        Email:
+        <input type="email" id="email" required><br><br>
+        Phone Number:
+        <input type="text" id="phone" required><br><br>
+        Password:
+        <input type="password" id="password" required><br><br>
+        Gender:
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female"> Female<br><br>
+        Qualification:
+        <select id="qualification">
+            <option>B.E / B.Tech</option>
+            <option>B.Sc</option>
+            <option>M.E / M.Tech</option>
+            <option>M.Sc</option>
+        </select><br><br>
+        Upload Resume:
+        <input type="file" id="resume" accept=".pdf,.doc,.docx" required><br><br>
+        <button type="submit">Register</button>
+        <button type="reset">Clear</button>
+    </form>
+</body>
+</html>
