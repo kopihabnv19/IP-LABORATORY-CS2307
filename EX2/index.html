@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Shopping System</title>
+    <style>
+        #cart { width: 350px; min-height: 170px; border: 2px dashed black; padding: 10px; }
+        img { margin: 10px; }
+    </style>
+    <script>
+        function allowDrop(event) { event.preventDefault(); }
+        function drag(event) { event.dataTransfer.setData("text", event.target.id); }
+        function drop(event) {
+            event.preventDefault();
+            var product = document.getElementById(event.dataTransfer.getData("text"));
+            if (product) document.getElementById("cart").appendChild(product);
+        }
+        function getLocation() {
+            var output = document.getElementById("location");
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, function () {
+                    output.textContent = "Unable to get location. Allow location access and try again.";
+                });
+            } else {
+                output.textContent = "Geolocation is not supported.";
+            }
+        }
+        function showPosition(position) {
+            document.getElementById("location").innerHTML =
+                "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+        }
+        function drawCanvas() {
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.font = "25px Arial";
+            ctx.fillText("Welcome to My Shop", 30, 50);
+        }
+    </script>
+</head>
+<body onload="drawCanvas()">
+    <h1>Online Shopping System</h1>
+    <hr>
+    <h2>Welcome</h2>
+    <canvas id="myCanvas" width="400" height="80" style="border:1px solid black;"></canvas>
+    <hr>
+    <h2>Products</h2>
+    <p>Drag the product image into the cart.</p>
+    <img src="laptop.jpg" id="product1" width="200" height="150" draggable="true" ondragstart="drag(event)" alt="Laptop">
+    <p><b>Laptop</b><br>Price: ₹45,000</p>
+    <h2>Shopping Cart</h2>
+    <div id="cart" ondrop="drop(event)" ondragover="allowDrop(event)">Drop Product Here</div>
+    <hr>
+    <h2>Product Video</h2>
+    <video width="400" height="250" controls>
+        <source src="product.mp4" type="video/mp4">
+        Your browser does not support video.
+    </video>
+    <hr>
+    <h2>Shop By Category</h2>
+    <p>Click a category in the image.</p>
+    <img src="categories.jpg" width="400" height="200" usemap="#shopmap" alt="Shopping Categories">
+    <map name="shopmap">
+        <area shape="rect" coords="0,0,200,200" href="#electronics" alt="Electronics">
+        <area shape="rect" coords="200,0,400,200" href="#clothing" alt="Clothing">
+    </map>
+    <h3 id="electronics">Electronics</h3>
+    <p>Laptops, Mobiles and Headphones</p>
+    <h3 id="clothing">Clothing</h3>
+    <p>Shirts, T-Shirts and Jeans</p>
+    <hr>
+    <h2>Find Store Location</h2>
+    <button onclick="getLocation()">Get My Location</button>
+    <p id="location"></p>
+    <hr>
+    <h2>Purchase Form</h2>
+    <form>
+        Name: <input type="text" name="name" required><br><br>
+        Email: <input type="email" name="email" required><br><br>
+        Phone: <input type="tel" name="phone"><br><br>
+        Product:
+        <select name="product"><option>Laptop</option><option>Mobile</option><option>Headphone</option></select><br><br>
+        Quantity: <input type="number" name="quantity" min="1" max="10"><br><br>
+        Delivery Date: <input type="date" name="date"><br><br>
+        Payment Method:
+        <input type="radio" name="payment" value="cash"> Cash on Delivery
+        <input type="radio" name="payment" value="online"> Online Payment<br><br>
+        Gift Packing: <input type="checkbox" name="gift"><br><br>
+        Address: <textarea name="address" rows="4" cols="30"></textarea><br><br>
+        <input type="submit" value="Purchase">
+        <input type="reset" value="Clear">
+    </form>
+    <hr>
+    <footer><p>© 2026 Online Shopping System</p></footer>
+</body>
+</html>
