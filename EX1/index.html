@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Reservation System</title>
+</head>
+<body>
+    <header>
+        <h1>Online Ticket Reservation System</h1>
+        <p>Book your movie, bus, train or event tickets easily.</p>
+    </header>
+    <hr>
+    <nav>
+        <a href="#tickets">Available Tickets</a> |
+        <a href="#rules">Booking Rules</a> |
+        <a href="#booking">Book Ticket</a>
+    </nav>
+    <hr>
+    <section id="tickets">
+        <h2>Available Tickets</h2>
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>Ticket ID</th>
+                <th>Type</th>
+                <th>Destination / Event</th>
+                <th>Date</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>101</td><td>Movie</td><td>Avengers</td><td>20-10-2026</td><td>₹200</td>
+            </tr>
+            <tr>
+                <td>102</td><td>Bus</td><td>Madurai to Chennai</td><td>21-10-2026</td><td>₹500</td>
+            </tr>
+            <tr>
+                <td>103</td><td>Train</td><td>Chennai to Coimbatore</td><td>22-10-2026</td><td>₹450</td>
+            </tr>
+        </table>
+    </section>
+    <br>
+    <section id="rules">
+        <h2>Booking Rules</h2>
+        <ul>
+            <li>Carry a valid ID proof.</li>
+            <li>Tickets cannot be transferred.</li>
+            <li>Reach the venue 30 minutes early.</li>
+            <li>Cancellation charges may apply.</li>
+        </ul>
+    </section>
+    <hr>
+    <section id="booking">
+        <h2>Book Your Ticket</h2>
+        <form>
+            Name:
+            <input type="text" name="name" required>
+            <br><br>
+            Email:
+            <input type="email" name="email" required>
+            <br><br>
+            Phone Number:
+            <input type="tel" name="phone">
+            <br><br>
+            Ticket Type:
+            <select name="ticket">
+                <option>Movie</option><option>Bus</option><option>Train</option><option>Event</option>
+            </select>
+            <br><br>
+            Travel / Event Date:
+            <input type="date" name="date">
+            <br><br>
+            Number of Tickets:
+            <input type="number" name="quantity" min="1" max="10">
+            <br><br>
+            Gender:
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+            <br><br>
+            Facilities:
+            <input type="checkbox" name="food"> Food
+            <input type="checkbox" name="parking"> Parking
+            <br><br>
+            <input type="submit" value="Book Ticket">
+            <input type="reset" value="Clear">
+        </form>
+    </section>
+    <hr>
+    <footer>
+        <p>© 2026 Ticket Reservation System</p>
+    </footer>
+</body>
+</html>
